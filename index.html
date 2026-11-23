@@ -1,58 +1,1056 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Darshan Krishna V — Computer Science Student and aspiring software developer.">
 <title>Darshan Krishna V — Portfolio</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
-:root{--bg:#0b0d0c;--panel:#121614;--panel2:#171d19;--text:#f0f3ee;--muted:#9aa59c;--line:#29332d;--lime:#c6f36a;--lime2:#a7d94b;--mono:"DM Mono",monospace;--sans:"Manrope",sans-serif}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.6}a{color:inherit;text-decoration:none}.wrap{width:min(1120px,calc(100% - 48px));margin:auto}
-header{position:sticky;top:0;z-index:10;background:#0b0d0ce8;backdrop-filter:blur(16px);border-bottom:1px solid #202923}
-.nav{height:76px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:800;letter-spacing:-1px;font-size:19px}.brand span{color:var(--lime)}nav{display:flex;gap:28px;color:var(--muted);font-size:12px;font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em}nav a:hover{color:var(--lime)}.menu{display:none;background:none;border:1px solid var(--line);color:white;padding:8px 12px;border-radius:8px}
-.hero{min-height:690px;display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:40px;padding:82px 0 90px;position:relative}.eyebrow{font:12px var(--mono);color:var(--lime);letter-spacing:.16em;text-transform:uppercase;display:flex;align-items:center;gap:12px}.eyebrow:before{content:"";width:30px;height:1px;background:var(--lime)}
-h1{font-size:clamp(48px,7vw,88px);line-height:1.02;letter-spacing:-.075em;margin:24px 0 22px;font-weight:800}h1 .outline{color:transparent;-webkit-text-stroke:1px #e9f0e6}.intro{color:var(--muted);font-size:17px;max-width:590px}.hero-actions{display:flex;gap:13px;margin-top:34px;flex-wrap:wrap}.btn{padding:13px 19px;border-radius:7px;font-weight:800;font-size:12px;letter-spacing:.03em;border:1px solid var(--line);transition:.2s}.btn.primary{background:var(--lime);color:#11170b;border-color:var(--lime)}.btn:hover{transform:translateY(-3px)}.btn.secondary:hover{border-color:var(--lime);color:var(--lime)}
-.hero-art{height:440px;position:relative;display:grid;place-items:center}.orbit{position:absolute;border:1px solid #354238;border-radius:50%;width:350px;height:350px;animation:spin 28s linear infinite}.orbit:before{content:"";position:absolute;width:9px;height:9px;background:var(--lime);border-radius:50%;top:45px;left:43px;box-shadow:0 0 25px var(--lime)}.orbit.two{width:265px;height:265px;animation-direction:reverse;border-style:dashed;opacity:.6}.monogram{width:270px;height:340px;border-radius:18px;overflow:hidden;background:#18221b;border:1px solid #536447;box-shadow:0 35px 100px #0008;transform:rotate(-4deg);position:relative}.monogram img{width:100%;height:100%;object-fit:cover;object-position:center 38%;display:block}.art-tag{position:absolute;bottom:28px;right:4px;background:var(--panel2);border:1px solid var(--line);padding:12px 15px;border-radius:8px;font:11px var(--mono);color:var(--muted)}.art-tag b{color:var(--lime);font-weight:400}
-.ticker{border-block:1px solid var(--line);padding:17px 0;color:var(--muted);font:11px var(--mono);letter-spacing:.13em;text-transform:uppercase;overflow:hidden;white-space:nowrap}.ticker span{color:var(--lime);padding:0 22px}
-section{padding:105px 0;border-bottom:1px solid #1d2620}.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:48px;gap:20px}.kicker{font:11px var(--mono);color:var(--lime);letter-spacing:.15em;text-transform:uppercase}.section-head h2{font-size:clamp(34px,5vw,52px);letter-spacing:-.06em;line-height:1.08;margin:12px 0 0}.section-note{color:var(--muted);font-size:13px;max-width:280px}
-.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px}.about-stamp{min-height:260px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:25px;display:flex;flex-direction:column;justify-content:space-between}.stamp-big{font-size:65px;letter-spacing:-.09em;font-weight:800;color:var(--lime)}.stamp-small{font:11px var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.12em}.about-copy p{font-size:17px;color:#c1cbc2;margin:0 0 22px}.facts{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:30px}.fact{background:var(--panel);padding:17px;border:1px solid var(--line);border-radius:8px}.fact small{display:block;color:var(--muted);font:10px var(--mono);text-transform:uppercase;letter-spacing:.1em}.fact b{display:block;margin-top:5px;font-size:14px}
-.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.skill{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:24px;min-height:160px;transition:.25s}.skill:hover,.project:hover{border-color:#789a46;transform:translateY(-4px)}.skill .num{font:11px var(--mono);color:var(--lime)}.skill h3{font-size:23px;margin:25px 0 4px;letter-spacing:-.04em}.skill p{font-size:12px;color:var(--muted);margin:0}
-.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.project{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:25px;min-height:245px;display:flex;flex-direction:column;justify-content:space-between;transition:.25s}.project-top{display:flex;justify-content:space-between;color:var(--lime);font:11px var(--mono)}.project h3{font-size:23px;letter-spacing:-.04em;margin:25px 0 8px}.project p{font-size:13px;color:var(--muted);max-width:460px;margin:0}.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}.tag{font:10px var(--mono);padding:6px 9px;border:1px solid var(--line);border-radius:5px;color:#c4cec5}
-.education{display:grid;grid-template-columns:1fr 1fr;gap:18px}.edu-card{padding:26px;background:var(--panel);border:1px solid var(--line);border-radius:10px}.edu-card .date{font:11px var(--mono);color:var(--lime)}.edu-card h3{font-size:21px;margin:15px 0 5px}.edu-card p{color:var(--muted);font-size:13px;margin:0}
-.contact{background:var(--lime);color:#11170c;padding:65px;border-radius:14px;display:flex;justify-content:space-between;align-items:center;gap:30px}.contact .kicker{color:#35451e}.contact h2{font-size:clamp(34px,5vw,56px);line-height:1.05;letter-spacing:-.06em;margin:12px 0}.contact p{margin:0;color:#43532c}.contact .btn{border-color:#263519;background:#11170c;color:var(--lime);white-space:nowrap}
-footer{padding:28px 0;color:var(--muted);font:11px var(--mono)}.foot{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}.social{display:flex;gap:20px}.social a:hover{color:var(--lime)}
-.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:none}@keyframes spin{to{transform:rotate(360deg)}}
-@media(max-width:760px){.wrap{width:min(100% - 34px,560px)}.nav{height:66px}nav{display:none;position:absolute;top:66px;left:0;right:0;background:#101512;padding:22px;flex-direction:column;gap:18px;border-bottom:1px solid var(--line)}nav.open{display:flex}.menu{display:block}.hero{grid-template-columns:1fr;padding:70px 0 55px;min-height:auto}.hero-art{height:330px;grid-row:1}.orbit{width:270px;height:270px}.orbit.two{width:205px;height:205px}.monogram{width:205px;height:260px}.art-tag{bottom:4px;right:0}.hero-copy{grid-row:2}.section-head{display:block}.section-note{margin-top:16px}.about-grid,.education{grid-template-columns:1fr;gap:16px}.skills-grid{grid-template-columns:1fr 1fr}.projects{grid-template-columns:1fr}.contact{padding:35px 25px;display:block}.contact .btn{display:inline-block;margin-top:25px}section{padding:75px 0}}
-@media(max-width:430px){.skills-grid{grid-template-columns:1fr}.facts{grid-template-columns:1fr 1fr}h1{font-size:52px}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}.reveal{opacity:1;transform:none}}
+:root {
+--bg:#0b0d0c;
+--panel:#121614;
+--panel2:#171d19;
+--text:#f0f3ee;
+--muted:#9aa59c;
+--line:#29332d;
+--lime:#c6f36a;
+--lime2:#a7d94b;
+--mono:"DM Mono",monospace;
+--sans:"Manrope",sans-serif;
+}
+
+* { box-sizing:border-box; }
+
+html {
+scroll-behavior:smooth;
+scroll-padding-top:90px;
+}
+
+body {
+margin:0;
+background:var(--bg);
+color:var(--text);
+font-family:var(--sans);
+line-height:1.6;
+}
+
+a {
+color:inherit;
+text-decoration:none;
+}
+
+.wrap {
+width:min(1120px,calc(100% - 48px));
+margin:auto;
+}
+
+header {
+position:sticky;
+top:0;
+z-index:10;
+background:#0b0d0ce8;
+backdrop-filter:blur(16px);
+border-bottom:1px solid #202923;
+}
+
+.nav {
+height:76px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+.brand {
+font-weight:800;
+letter-spacing:-1px;
+font-size:19px;
+}
+
+.brand span { color:var(--lime); }
+
+nav {
+display:flex;
+gap:28px;
+color:var(--muted);
+font-size:12px;
+font-family:var(--mono);
+text-transform:uppercase;
+letter-spacing:.08em;
+}
+
+nav a:hover { color:var(--lime); }
+
+.menu {
+display:none;
+background:none;
+border:1px solid var(--line);
+color:white;
+padding:8px 12px;
+border-radius:8px;
+}
+
+.hero {
+min-height:690px;
+display:grid;
+grid-template-columns:1.2fr .8fr;
+align-items:center;
+gap:40px;
+padding:82px 0 90px;
+position:relative;
+}
+
+.eyebrow {
+font:12px var(--mono);
+color:var(--lime);
+letter-spacing:.16em;
+text-transform:uppercase;
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.eyebrow:before {
+content:"";
+width:30px;
+height:1px;
+background:var(--lime);
+}
+
+h1 {
+font-size:clamp(48px,7vw,88px);
+line-height:1.02;
+letter-spacing:-.075em;
+margin:24px 0 22px;
+font-weight:800;
+}
+
+h1 .outline {
+color:transparent;
+-webkit-text-stroke:1px #e9f0e6;
+}
+
+.intro {
+color:var(--muted);
+font-size:17px;
+max-width:590px;
+}
+
+.hero-actions {
+display:flex;
+gap:13px;
+margin-top:34px;
+flex-wrap:wrap;
+}
+
+.btn {
+padding:13px 19px;
+border-radius:7px;
+font-weight:800;
+font-size:12px;
+letter-spacing:.03em;
+border:1px solid var(--line);
+transition:.2s;
+}
+
+.btn.primary {
+background:var(--lime);
+color:#11170b;
+border-color:var(--lime);
+}
+
+.btn:hover { transform:translateY(-3px); }
+
+.btn.secondary:hover {
+border-color:var(--lime);
+color:var(--lime);
+}
+
+.hero-art {
+height:440px;
+position:relative;
+display:grid;
+place-items:center;
+}
+
+.orbit {
+position:absolute;
+border:1px solid #354238;
+border-radius:50%;
+width:350px;
+height:350px;
+animation:spin 28s linear infinite;
+}
+
+.orbit:before {
+content:"";
+position:absolute;
+width:9px;
+height:9px;
+background:var(--lime);
+border-radius:50%;
+top:45px;
+left:43px;
+box-shadow:0 0 25px var(--lime);
+}
+
+.orbit.two {
+width:265px;
+height:265px;
+animation-direction:reverse;
+border-style:dashed;
+opacity:.6;
+}
+
+/* PROFILE PHOTO */
+.monogram {
+width:270px;
+height:340px;
+border-radius:18px;
+overflow:hidden;
+background:#18221b;
+border:1px solid #536447;
+box-shadow:0 35px 100px #0008;
+transform:rotate(-4deg);
+position:relative;
+}
+
+.monogram img {
+width:100%;
+height:100%;
+object-fit:cover;
+object-position:center 38%;
+display:block;
+}
+
+.art-tag {
+position:absolute;
+bottom:28px;
+right:4px;
+background:var(--panel2);
+border:1px solid var(--line);
+padding:12px 15px;
+border-radius:8px;
+font:11px var(--mono);
+color:var(--muted);
+}
+
+.art-tag b {
+color:var(--lime);
+font-weight:400;
+}
+
+.ticker {
+border-block:1px solid var(--line);
+padding:17px 0;
+color:var(--muted);
+font:11px var(--mono);
+letter-spacing:.13em;
+text-transform:uppercase;
+overflow:hidden;
+white-space:nowrap;
+}
+
+.ticker span {
+color:var(--lime);
+padding:0 22px;
+}
+
+section {
+padding:105px 0;
+border-bottom:1px solid #1d2620;
+}
+
+.section-head {
+display:flex;
+justify-content:space-between;
+align-items:end;
+margin-bottom:48px;
+gap:20px;
+}
+
+.kicker {
+font:11px var(--mono);
+color:var(--lime);
+letter-spacing:.15em;
+text-transform:uppercase;
+}
+
+.section-head h2 {
+font-size:clamp(34px,5vw,52px);
+letter-spacing:-.06em;
+line-height:1.08;
+margin:12px 0 0;
+}
+
+.section-note {
+color:var(--muted);
+font-size:13px;
+max-width:280px;
+}
+
+.about-grid {
+display:grid;
+grid-template-columns:.8fr 1.2fr;
+gap:70px;
+}
+
+.about-stamp {
+min-height:260px;
+background:var(--panel);
+border:1px solid var(--line);
+border-radius:12px;
+padding:25px;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+}
+
+.stamp-big {
+font-size:65px;
+letter-spacing:-.09em;
+font-weight:800;
+color:var(--lime);
+}
+
+.stamp-small {
+font:11px var(--mono);
+color:var(--muted);
+text-transform:uppercase;
+letter-spacing:.12em;
+}
+
+.about-copy p {
+font-size:17px;
+color:#c1cbc2;
+margin:0 0 22px;
+}
+
+.facts {
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px;
+margin-top:30px;
+}
+
+.fact {
+background:var(--panel);
+padding:17px;
+border:1px solid var(--line);
+border-radius:8px;
+}
+
+.fact small {
+display:block;
+color:var(--muted);
+font:10px var(--mono);
+text-transform:uppercase;
+letter-spacing:.1em;
+}
+
+.fact b {
+display:block;
+margin-top:5px;
+font-size:14px;
+}
+
+.skills-grid {
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:14px;
+}
+
+.skill {
+background:var(--panel);
+border:1px solid var(--line);
+border-radius:10px;
+padding:24px;
+min-height:160px;
+transition:.25s;
+}
+
+.skill:hover,
+.project:hover {
+border-color:#789a46;
+transform:translateY(-4px);
+}
+
+.skill .num {
+font:11px var(--mono);
+color:var(--lime);
+}
+
+.skill h3 {
+font-size:23px;
+margin:25px 0 4px;
+letter-spacing:-.04em;
+}
+
+.skill p {
+font-size:12px;
+color:var(--muted);
+margin:0;
+}
+
+.projects {
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:16px;
+}
+
+.project {
+background:var(--panel);
+border:1px solid var(--line);
+border-radius:11px;
+padding:25px;
+min-height:245px;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+transition:.25s;
+}
+
+.project-top {
+display:flex;
+justify-content:space-between;
+color:var(--lime);
+font:11px var(--mono);
+}
+
+.project h3 {
+font-size:23px;
+letter-spacing:-.04em;
+margin:25px 0 8px;
+}
+
+.project p {
+font-size:13px;
+color:var(--muted);
+max-width:460px;
+margin:0;
+}
+
+.tags {
+display:flex;
+gap:8px;
+flex-wrap:wrap;
+margin-top:22px;
+}
+
+.tag {
+font:10px var(--mono);
+padding:6px 9px;
+border:1px solid var(--line);
+border-radius:5px;
+color:#c4cec5;
+}
+
+.education {
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:18px;
+}
+
+.edu-card {
+padding:26px;
+background:var(--panel);
+border:1px solid var(--line);
+border-radius:10px;
+}
+
+.edu-card .date {
+font:11px var(--mono);
+color:var(--lime);
+}
+
+.edu-card h3 {
+font-size:21px;
+margin:15px 0 5px;
+}
+
+.edu-card p {
+color:var(--muted);
+font-size:13px;
+margin:0;
+}
+
+.contact {
+background:var(--lime);
+color:#11170c;
+padding:65px;
+border-radius:14px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:30px;
+}
+
+.contact .kicker { color:#35451e; }
+
+.contact h2 {
+font-size:clamp(34px,5vw,56px);
+line-height:1.05;
+letter-spacing:-.06em;
+margin:12px 0;
+}
+
+.contact p {
+margin:0;
+color:#43532c;
+}
+
+.contact .btn {
+border-color:#263519;
+background:#11170c;
+color:var(--lime);
+white-space:nowrap;
+}
+
+footer {
+padding:28px 0;
+color:var(--muted);
+font:11px var(--mono);
+}
+
+.foot {
+display:flex;
+justify-content:space-between;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.social {
+display:flex;
+gap:20px;
+}
+
+.social a:hover { color:var(--lime); }
+
+.reveal {
+opacity:0;
+transform:translateY(20px);
+transition:opacity .7s ease,transform .7s ease;
+}
+
+.reveal.visible {
+opacity:1;
+transform:none;
+}
+
+@keyframes spin {
+to { transform:rotate(360deg); }
+}
+
+/* MOBILE RESPONSIVE */
+
+@media(max-width:760px) {
+
+.wrap {
+width:min(100% - 34px,560px);
+}
+
+.nav { height:66px; }
+
+nav {
+display:none;
+position:absolute;
+top:66px;
+left:0;
+right:0;
+background:#101512;
+padding:22px;
+flex-direction:column;
+gap:18px;
+border-bottom:1px solid var(--line);
+}
+
+nav.open { display:flex; }
+
+.menu { display:block; }
+
+.hero {
+grid-template-columns:1fr;
+padding:70px 0 55px;
+min-height:auto;
+}
+
+.hero-art {
+height:330px;
+grid-row:1;
+}
+
+.orbit {
+width:270px;
+height:270px;
+}
+
+.orbit.two {
+width:205px;
+height:205px;
+}
+
+.monogram {
+width:205px;
+height:260px;
+}
+
+.art-tag {
+bottom:4px;
+right:0;
+}
+
+.hero-copy { grid-row:2; }
+
+.section-head { display:block; }
+
+.section-note { margin-top:16px; }
+
+.about-grid,
+.education {
+grid-template-columns:1fr;
+gap:16px;
+}
+
+.skills-grid {
+grid-template-columns:1fr 1fr;
+}
+
+.projects {
+grid-template-columns:1fr;
+}
+
+.contact {
+padding:35px 25px;
+display:block;
+}
+
+.contact .btn {
+display:inline-block;
+margin-top:25px;
+}
+
+section { padding:75px 0; }
+
+}
+
+@media(max-width:430px) {
+
+.skills-grid { grid-template-columns:1fr; }
+
+.facts { grid-template-columns:1fr 1fr; }
+
+h1 { font-size:52px; }
+
+}
+
+@media(prefers-reduced-motion:reduce) {
+
+*,*:before,*:after {
+animation:none!important;
+scroll-behavior:auto!important;
+transition:none!important;
+}
+
+.reveal {
+opacity:1;
+transform:none;
+}
+
+}
 </style>
 </head>
+
 <body>
-<header><div class="wrap nav"><a class="brand" href="#home">DK<span>.</span></a><button class="menu" aria-label="Toggle navigation" onclick="document.querySelector('nav').classList.toggle('open')">MENU</button><nav><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a></nav></div></header>
-<main>
-<div class="wrap hero" id="home">
- <div class="hero-copy reveal"><div class="eyebrow">Computer Science Student · India</div><h1>Darshan<br><span class="outline">Krishna V.</span></h1><p class="intro">Curious mind. Growing developer. Building ideas through code, one project at a time.</p><div class="hero-actions"><a class="btn primary" href="#projects">EXPLORE MY WORK ↘</a><a class="btn secondary" href="#contact">LET'S CONNECT ↗</a></div></div>
- <div class="hero-art reveal" aria-label="DK monogram graphic"><div class="orbit"></div><div class="orbit two"></div><div class="monogram"><img src="assets/darshan.jpg" alt="Portrait of Darshan Krishna V"></div><div class="art-tag"><b>AVAILABLE TO LEARN</b><br>IMCA · YEAR 02</div></div>
+
+<header>
+<div class="wrap nav">
+<a class="brand" href="#home">DK<span>.</span></a>
+
+<button class="menu" aria-label="Toggle navigation"
+onclick="document.querySelector('nav').classList.toggle('open')">
+MENU
+</button>
+
+<nav>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#education">Education</a>
+<a href="#contact">Contact</a>
+</nav>
 </div>
-<div class="ticker">LEARNING BY BUILDING <span>✳</span> C PROGRAMMING <span>✳</span> PYTHON <span>✳</span> JAVA <span>✳</span> ALWAYS CURIOUS <span>✳</span></div>
-<section id="about"><div class="wrap"><div class="section-head reveal"><div><div class="kicker">01 / A LITTLE ABOUT ME</div><h2>Behind the<br>keyboard.</h2></div><p class="section-note">A student exploring software, problem-solving and the craft of building useful things.</p></div><div class="about-grid"><div class="about-stamp reveal"><div class="stamp-small">Currently focused on</div><div class="stamp-big">Learn.<br>Build.<br>Repeat.</div><div class="stamp-small">Computer applications · 2026</div></div><div class="about-copy reveal"><p>I'm Darshan Krishna V, a second-year Integrated Master of Computer Applications (IMCA) student at Rajagiri College of Social Sciences.</p><p>I'm developing my foundations in programming with C, Python and Java, and learning by creating practical academic projects. I'm interested in growing as a developer through experimentation, collaboration and consistent practice.</p><div class="facts"><div class="fact"><small>Programme</small><b>IMCA</b></div><div class="fact"><small>Current year</small><b>Second year</b></div><div class="fact"><small>Institution</small><b>Rajagiri College</b></div><div class="fact"><small>Focus</small><b>Software development</b></div></div></div></div></div></section>
-<section id="skills"><div class="wrap"><div class="section-head reveal"><div><div class="kicker">02 / TOOLKIT</div><h2>What I work with.</h2></div><p class="section-note">The languages I'm using to strengthen my programming fundamentals.</p></div><div class="skills-grid"><article class="skill reveal"><div class="num">01 — LANGUAGE</div><h3>C</h3><p>Programming fundamentals & logic</p></article><article class="skill reveal"><div class="num">02 — LANGUAGE</div><h3>Python</h3><p>Application logic & database projects</p></article><article class="skill reveal"><div class="num">03 — LANGUAGE</div><h3>Java</h3><p>Object-oriented programming</p></article></div></div></section>
-<section id="projects"><div class="wrap"><div class="section-head reveal"><div><div class="kicker">03 / SELECTED WORK</div><h2>Things I've built.</h2></div><p class="section-note">Academic and practice projects that helped turn concepts into working applications.</p></div><div class="projects">
-<article class="project reveal"><div><div class="project-top"><span>PROJECT / 01</span><span>JAVA</span></div><h3>Java Capstone Project</h3><p>A capstone project developed using Java as part of my coursework. Add a short project-specific description when you're ready.</p></div><div class="tags"><span class="tag">Java</span><span class="tag">Academic project</span></div></article>
-<article class="project reveal"><div><div class="project-top"><span>PROJECT / 02</span><span>PYTHON · DBMS</span></div><h3>Employee Management System</h3><p>A Python-based employee management system with a database component, created to practise application and data-management concepts.</p></div><div class="tags"><span class="tag">Python</span><span class="tag">DBMS</span></div></article>
-<article class="project reveal"><div><div class="project-top"><span>PROJECT / 03</span><span>ANDROID</span></div><h3>Attendance Calculator</h3><p>An Android application designed to help calculate attendance and keep track of attendance requirements.</p></div><div class="tags"><span class="tag">Android</span><span class="tag">Mobile application</span></div></article>
-<article class="project reveal"><div><div class="project-top"><span>UP NEXT</span><span>IN PROGRESS</span></div><h3>More to come.</h3><p>I'm continuing to learn, experiment and build. This space will grow as I take on new challenges.</p></div><div class="tags"><span class="tag">Learning</span><span class="tag">Building</span></div></article>
-</div></div></section>
-<section id="education"><div class="wrap"><div class="section-head reveal"><div><div class="kicker">04 / EDUCATION</div><h2>Where I'm learning.</h2></div></div><div class="education"><article class="edu-card reveal"><div class="date">CURRENT · SECOND YEAR</div><h3>Integrated Master of Computer Applications</h3><p>Rajagiri College of Social Sciences</p></article><article class="edu-card reveal"><div class="date">EXPERIENCE</div><h3>At the beginning of my journey</h3><p>No professional experience yet — currently focused on learning, coursework and hands-on projects.</p></article></div></div></section>
-<section id="contact"><div class="wrap"><div class="contact reveal"><div><div class="kicker">05 / GET IN TOUCH</div><h2>Have an idea?<br>Let's talk.</h2><p>Open to connecting, learning and collaborating.</p></div><a class="btn" href="mailto:imca2520@rajagiri.edu">SEND ME AN EMAIL ↗</a></div></div></section>
+</header>
+
+<main>
+
+<!-- HOME -->
+
+<div class="wrap hero" id="home">
+
+<div class="hero-copy reveal">
+
+<div class="eyebrow">
+Computer Science Student · India
+</div>
+
+<h1>
+Darshan<br>
+<span class="outline">Krishna V.</span>
+</h1>
+
+<p class="intro">
+Curious mind. Growing developer. Building ideas through code, one project at a time.
+</p>
+
+<div class="hero-actions">
+<a class="btn primary" href="#projects">EXPLORE MY WORK ↘</a>
+<a class="btn secondary" href="#contact">LET'S CONNECT ↗</a>
+</div>
+
+</div>
+
+<div class="hero-art reveal" aria-label="Portrait of Darshan Krishna V">
+
+<div class="orbit"></div>
+<div class="orbit two"></div>
+
+<!-- CORRECTED PHOTO PATH -->
+<div class="monogram">
+<img src="darshan.jpg" alt="Portrait of Darshan Krishna V">
+</div>
+
+<div class="art-tag">
+<b>AVAILABLE TO LEARN</b><br>
+IMCA · YEAR 02
+</div>
+
+</div>
+</div>
+
+<div class="ticker">
+LEARNING BY BUILDING
+<span>✳</span> C PROGRAMMING
+<span>✳</span> PYTHON
+<span>✳</span> JAVA
+<span>✳</span> ALWAYS CURIOUS
+<span>✳</span>
+</div>
+
+<!-- ABOUT -->
+
+<section id="about">
+<div class="wrap">
+
+<div class="section-head reveal">
+<div>
+<div class="kicker">01 / A LITTLE ABOUT ME</div>
+<h2>Behind the<br>keyboard.</h2>
+</div>
+
+<p class="section-note">
+A student exploring software, problem-solving and the craft of building useful things.
+</p>
+</div>
+
+<div class="about-grid">
+
+<div class="about-stamp reveal">
+<div class="stamp-small">Currently focused on</div>
+<div class="stamp-big">Learn.<br>Build.<br>Repeat.</div>
+<div class="stamp-small">Computer applications · 2026</div>
+</div>
+
+<div class="about-copy reveal">
+
+<p>
+I'm Darshan Krishna V, a second-year Integrated Master of Computer Applications (IMCA) student at Rajagiri College of Social Sciences.
+</p>
+
+<p>
+I'm developing my foundations in programming with C, Python and Java, and learning by creating practical academic projects. I'm interested in growing as a developer through experimentation, collaboration and consistent practice.
+</p>
+
+<div class="facts">
+
+<div class="fact">
+<small>Programme</small>
+<b>IMCA</b>
+</div>
+
+<div class="fact">
+<small>Current year</small>
+<b>Second year</b>
+</div>
+
+<div class="fact">
+<small>Institution</small>
+<b>Rajagiri College</b>
+</div>
+
+<div class="fact">
+<small>Focus</small>
+<b>Software development</b>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills">
+<div class="wrap">
+
+<div class="section-head reveal">
+<div>
+<div class="kicker">02 / TOOLKIT</div>
+<h2>What I work with.</h2>
+</div>
+
+<p class="section-note">
+The languages I'm using to strengthen my programming fundamentals.
+</p>
+</div>
+
+<div class="skills-grid">
+
+<article class="skill reveal">
+<div class="num">01 — LANGUAGE</div>
+<h3>C</h3>
+<p>Programming fundamentals & logic</p>
+</article>
+
+<article class="skill reveal">
+<div class="num">02 — LANGUAGE</div>
+<h3>Python</h3>
+<p>Application logic & database projects</p>
+</article>
+
+<article class="skill reveal">
+<div class="num">03 — LANGUAGE</div>
+<h3>Java</h3>
+<p>Object-oriented programming</p>
+</article>
+
+</div>
+</div>
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects">
+<div class="wrap">
+
+<div class="section-head reveal">
+<div>
+<div class="kicker">03 / SELECTED WORK</div>
+<h2>Things I've built.</h2>
+</div>
+
+<p class="section-note">
+Academic and practice projects that helped turn concepts into working applications.
+</p>
+</div>
+
+<div class="projects">
+
+<article class="project reveal">
+<div>
+<div class="project-top">
+<span>PROJECT / 01</span>
+<span>JAVA</span>
+</div>
+
+<h3>Java Capstone Project</h3>
+
+<p>
+A capstone project developed using Java as part of my coursework. Add a short project-specific description when you're ready.
+</p>
+</div>
+
+<div class="tags">
+<span class="tag">Java</span>
+<span class="tag">Academic project</span>
+</div>
+</article>
+
+<article class="project reveal">
+<div>
+<div class="project-top">
+<span>PROJECT / 02</span>
+<span>PYTHON · DBMS</span>
+</div>
+
+<h3>Employee Management System</h3>
+
+<p>
+A Python-based employee management system with a database component, created to practise application and data-management concepts.
+</p>
+</div>
+
+<div class="tags">
+<span class="tag">Python</span>
+<span class="tag">DBMS</span>
+</div>
+</article>
+
+<article class="project reveal">
+<div>
+<div class="project-top">
+<span>PROJECT / 03</span>
+<span>ANDROID</span>
+</div>
+
+<h3>Attendance Calculator</h3>
+
+<p>
+An Android application designed to help calculate attendance and keep track of attendance requirements.
+</p>
+</div>
+
+<div class="tags">
+<span class="tag">Android</span>
+<span class="tag">Mobile application</span>
+</div>
+</article>
+
+<article class="project reveal">
+<div>
+<div class="project-top">
+<span>UP NEXT</span>
+<span>IN PROGRESS</span>
+</div>
+
+<h3>More to come.</h3>
+
+<p>
+I'm continuing to learn, experiment and build. This space will grow as I take on new challenges.
+</p>
+</div>
+
+<div class="tags">
+<span class="tag">Learning</span>
+<span class="tag">Building</span>
+</div>
+</article>
+
+</div>
+</div>
+</section>
+
+<!-- EDUCATION -->
+
+<section id="education">
+<div class="wrap">
+
+<div class="section-head reveal">
+<div>
+<div class="kicker">04 / EDUCATION</div>
+<h2>Where I'm learning.</h2>
+</div>
+</div>
+
+<div class="education">
+
+<article class="edu-card reveal">
+<div class="date">CURRENT · SECOND YEAR</div>
+<h3>Integrated Master of Computer Applications</h3>
+<p>Rajagiri College of Social Sciences</p>
+</article>
+
+<article class="edu-card reveal">
+<div class="date">EXPERIENCE</div>
+<h3>At the beginning of my journey</h3>
+<p>
+No professional experience yet — currently focused on learning, coursework and hands-on projects.
+</p>
+</article>
+
+</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+<div class="wrap">
+
+<div class="contact reveal">
+
+<div>
+<div class="kicker">05 / GET IN TOUCH</div>
+<h2>Have an idea?<br>Let's talk.</h2>
+<p>Open to connecting, learning and collaborating.</p>
+</div>
+
+<a class="btn" href="mailto:imca2520@rajagiri.edu">
+SEND ME AN EMAIL ↗
+</a>
+
+</div>
+</div>
+</section>
+
 </main>
-<footer><div class="wrap foot"><span>© <span id="year"></span> DARSHAN KRISHNA V · MADE WITH CURIOSITY</span><div class="social"><a href="https://github.com/darshankrishnav" target="_blank" rel="noopener">GITHUB ↗</a><a href="https://www.linkedin.com/in/darshan-krishna-v-137b01340/" target="_blank" rel="noopener">LINKEDIN ↗</a><a href="mailto:imca2520@rajagiri.edu">EMAIL ↗</a></div></div></footer>
+
+<!-- FOOTER -->
+
+<footer>
+<div class="wrap foot">
+
+<span>
+© <span id="year"></span> DARSHAN KRISHNA V · MADE WITH CURIOSITY
+</span>
+
+<div class="social">
+
+<a href="https://github.com/darshankrishnav" target="_blank" rel="noopener">
+GITHUB ↗
+</a>
+
+<a href="https://www.linkedin.com/in/darshan-krishna-v-137b01340/" target="_blank" rel="noopener">
+LINKEDIN ↗
+</a>
+
+<a href="mailto:imca2520@rajagiri.edu">
+EMAIL ↗
+</a>
+
+</div>
+</div>
+</footer>
+
 <script>
-document.getElementById('year').textContent=new Date().getFullYear();
-const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}}),{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
-document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>document.querySelector('nav').classList.remove('open')));
+
+// Automatically update copyright year
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Scroll reveal animations
+const observer = new IntersectionObserver(entries => {
+entries.forEach(e => {
+if(e.isIntersecting) {
+e.target.classList.add('visible');
+observer.unobserve(e.target);
+}
+});
+}, {threshold:.12});
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Close mobile navigation after clicking a link
+document.querySelectorAll('nav a').forEach(a =>
+a.addEventListener('click', () =>
+document.querySelector('nav').classList.remove('open')
+));
+
 </script>
-</body></html>
+
+</body>
+</html>
